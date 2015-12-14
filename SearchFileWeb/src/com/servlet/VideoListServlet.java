@@ -77,48 +77,51 @@ System.out.println("filetype "+filetype);
 		File f = new File(path);
 		File[] files = f.listFiles();
 		List<FileI> lists = new ArrayList<FileI>();
-		if(files.length>0){
-			for (int i = 0; i < files.length; i++) {
-				if(files[i].isFile()){
-					FileI ifile = new FileI();
-					String arrfilename = files[i].getName();
-					int index = arrfilename.lastIndexOf(".");
-					
-					String suffix = "";
-					if(index!=-1)
-						suffix = arrfilename.substring((index+1));
+		if(null!=files) {
+			if (files.length > 0) {
+				for (int i = 0; i < files.length; i++) {
+					if (files[i].isFile()) {
+						FileI ifile = new FileI();
+						String arrfilename = files[i].getName();
+						int index = arrfilename.lastIndexOf(".");
+
+						String suffix = "";
+						if (index != -1)
+							suffix = arrfilename.substring((index + 1));
 						suffixLists.add(suffix);
-					if(suffix.equals(filetype)){
-						String beforeName = uploadService.getUploadBeforeFilename(arrfilename.substring(0, index));
-System.out.println("beforename: "+beforeName);						
-						ifile.setFilename(beforeName);
-						ifile.setArrfilename(arrfilename);
-						lists.add(ifile);
+						if (suffix.equals(filetype)) {
+							String beforeName = uploadService.getUploadBeforeFilename(arrfilename.substring(0, index));
+							System.out.println("beforename: " + beforeName);
+							ifile.setFilename(beforeName);
+							ifile.setArrfilename(arrfilename);
+							lists.add(ifile);
+						}
 					}
+
 				}
-				
 			}
+			//check upload folder exist file suffix
+			boolean hasFiletype = true;
+			int noSuffix = 0;
+			for (int i = 0; i < suffixLists.size(); i++) {
+				if(!filetype.equals(suffixLists.get(i))){
+					noSuffix++;
+				}
+				if(noSuffix == suffixLists.size()){
+					hasFiletype = false;
+				}
+			}
+
+			/*if(!hasFiletype){
+				try {
+					request.getRequestDispatcher("/notfound.html").forward(request,	response);
+	//				response.sendRedirect("notfound.html");
+
+				} catch (Exception e) {
+				}
+			}*/
 		}
-		//check upload folder exist file suffix
-		boolean hasFiletype = true;
-		int noSuffix = 0;
-		for (int i = 0; i < suffixLists.size(); i++) {
-			if(!filetype.equals(suffixLists.get(i))){
-				noSuffix++;
-			}
-			if(noSuffix == suffixLists.size()){
-				hasFiletype = false;
-			}
-		}
-		
-		/*if(!hasFiletype){
-			try {
-				request.getRequestDispatcher("/notfound.html").forward(request,	response);
-//				response.sendRedirect("notfound.html");
-				
-			} catch (Exception e) {
-			}
-		}*/
+
 		return lists;
 		
 	}
@@ -128,23 +131,24 @@ System.out.println("beforename: "+beforeName);
 		if("img".equals(fileType)){
 			File f = new File(path);
 			File[] files = f.listFiles();
-			
-			if(files.length>0){
-				for (int i = 0; i < files.length; i++) {
-					if(files[i].isFile()){
-						FileI ifile = new FileI();
-						String arrfilename = files[i].getName();
-						int index = arrfilename.lastIndexOf(".");
-						String suffix = "";
-						if(index!=-1)
-							suffix = arrfilename.substring((index+1));
-						String temp_suffix = suffix.toLowerCase();
-						if("jpg".equals(temp_suffix) || "jpeg".equals(temp_suffix) || "png".equals(temp_suffix) || "bmp".equals(temp_suffix) || "gif".equals(temp_suffix)){
-							String beforeName = uploadService.getUploadBeforeFilename(arrfilename.substring(0, index));
-							System.out.println("beforename: "+beforeName);						
-							ifile.setFilename(beforeName);
-							ifile.setArrfilename(arrfilename);
-							lists.add(ifile);
+			if(null!=files) {
+				if (files.length > 0) {
+					for (int i = 0; i < files.length; i++) {
+						if (files[i].isFile()) {
+							FileI ifile = new FileI();
+							String arrfilename = files[i].getName();
+							int index = arrfilename.lastIndexOf(".");
+							String suffix = "";
+							if (index != -1)
+								suffix = arrfilename.substring((index + 1));
+							String temp_suffix = suffix.toLowerCase();
+							if ("jpg".equals(temp_suffix) || "jpeg".equals(temp_suffix) || "png".equals(temp_suffix) || "bmp".equals(temp_suffix) || "gif".equals(temp_suffix)) {
+								String beforeName = uploadService.getUploadBeforeFilename(arrfilename.substring(0, index));
+								System.out.println("beforename: " + beforeName);
+								ifile.setFilename(beforeName);
+								ifile.setArrfilename(arrfilename);
+								lists.add(ifile);
+							}
 						}
 					}
 				}
@@ -158,23 +162,24 @@ System.out.println("beforename: "+beforeName);
 		if("txt".equals(filetype)){
 			File f = new File(path);
 			File[] files = f.listFiles();
-			
-			if(files.length>0){
-				for (int i = 0; i < files.length; i++) {
-					if(files[i].isFile()){
-						FileI ifile = new FileI();
-						String arrfilename = files[i].getName();
-						int index = arrfilename.lastIndexOf(".");
-						String suffix = "";
-						if(index!=-1)
-							suffix = arrfilename.substring((index+1));
-						String temp_suffix = suffix.toLowerCase();
-						if("txt".equals(temp_suffix) || "sql".equals(temp_suffix)){
-							String beforeName = uploadService.getUploadBeforeFilename(arrfilename.substring(0, index));
-							System.out.println("beforename: "+beforeName);						
-							ifile.setFilename(beforeName);
-							ifile.setArrfilename(arrfilename);
-							lists.add(ifile);
+			if(null!=files) {
+				if (files.length > 0) {
+					for (int i = 0; i < files.length; i++) {
+						if (files[i].isFile()) {
+							FileI ifile = new FileI();
+							String arrfilename = files[i].getName();
+							int index = arrfilename.lastIndexOf(".");
+							String suffix = "";
+							if (index != -1)
+								suffix = arrfilename.substring((index + 1));
+							String temp_suffix = suffix.toLowerCase();
+							if ("txt".equals(temp_suffix) || "sql".equals(temp_suffix)) {
+								String beforeName = uploadService.getUploadBeforeFilename(arrfilename.substring(0, index));
+								System.out.println("beforename: " + beforeName);
+								ifile.setFilename(beforeName);
+								ifile.setArrfilename(arrfilename);
+								lists.add(ifile);
+							}
 						}
 					}
 				}

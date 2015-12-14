@@ -24,10 +24,6 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>lo4jInit</servlet-name>
-        <url-pattern>/initlog4j.html</url-pattern>
-    </servlet-mapping>
 
     <error-page>
         <error-code>404</error-code>

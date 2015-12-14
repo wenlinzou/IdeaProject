@@ -80,6 +80,20 @@ function goToOther(msgObj){
 		return false;
 	}
 }
+//js获取项目根路径，如： http://localhost:8083/uimcardprj
+function getRootPath(){
+	//获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+	var curWwwPath=window.document.location.href;
+	//获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+	var pathName=window.document.location.pathname;
+	var pos=curWwwPath.indexOf(pathName);
+	//获取主机地址，如： http://localhost:8083
+	var localhostPaht=curWwwPath.substring(0,pos);
+	//获取带"/"的项目名，如：/uimcardprj
+	var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+	return curWwwPath;
+}
+
 //keycode   71 = g G 
 var gameKeycount = 0;
 var lkey = 0;//76
@@ -87,6 +101,7 @@ var okey = 0;//79
 var vkey = 0;//86
 var ekey = 0;//69
 $(document).keyup(function(event){
+	 var rootPath = getRootPath();
 	 if (event.keyCode == 108 || event.keyCode == 76) {
 	        lkey++;
 	    }
@@ -104,7 +119,7 @@ $(document).keyup(function(event){
 	            if (vkey > 0) {
 	                if (ekey > 0) {
 	                    var myurl = location.host;
-	                    window.location.href = "http://" + myurl + "/SearchFileWeb/otherInfo/htmlgame/love/index.html";
+	                    window.location.href = rootPath + "otherInfo/htmlgame/love/index.html";
 	                }
 	            }
 	        }
@@ -118,16 +133,17 @@ $(document).keyup(function(event){
 		gameKeycount++;
 		if(gameKeycount==5){
 			var myurl = location.host;
-			window.location.href = "http://"+myurl+"/SearchFileWeb/otherInfo/whiteDiv.html";
+			window.location.href = rootPath + "otherInfo/whiteDiv.html";
 		}
 	}
 	if(event.keyCode ==32){
+		getRootPath();
 		spaceKeyCount++;
 		if(spaceKeyCount==10){
 			var myurl = location.host;
 //			myurl+"/input.html";
 			//http://localhost:8080/SearchFileWeb/input.html
-			window.location.href = "http://"+myurl+"/SearchFileWeb/otherInfo/userRegister.jsp";
+			window.location.href = rootPath + "otherInfo/userRegister.jsp";
 		}
 	}
 });
