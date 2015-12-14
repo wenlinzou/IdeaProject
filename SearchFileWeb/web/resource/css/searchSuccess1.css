@@ -1,0 +1,139 @@
+*{margin:0 auto;padding:0;list-style:none;border:none;}
+body{text-align: center;background-color: #F8F8F8;}
+
+.write2disk{
+	background-color: #98BAEF;
+	color:white;
+}
+
+.convertH{
+	-webkit-transform: rotate(180deg); 
+}
+
+.totalCount{
+	color:red;
+	font-size: 24px;
+}
+.currentPage{
+	color:green;
+	font-size: 22px;
+}
+.totalPage{
+	color:grey;
+	font-size:22px;
+}
+.pageSize{
+	color:pink;
+	font-size:22px;
+}
+
+.mytrOne{
+	background-color:#ECF6EE;
+}
+.mytrTwo{
+	background-color:#fafafa
+}
+.over{
+    background-color: tomato;
+}
+.shBtnStyle{
+	font-weight: bold;
+}
+.backIndexBtnStyle{
+	background-color:red;
+	color:white;
+	font-weight: bold;
+}
+.renameBtnStyle{
+	background-color:green;
+	color:#ccddaa;
+	font-weight: bold;
+}
+
+.mytitle{
+	background-color:orange; 
+	color:#f3f3f3;
+	font-size:25px;
+	font-weight:bold;
+	text-align: center;
+}
+.mycenter{
+	text-align: center;
+}
+
+#mySearchInfo{
+	border:0px;
+	line-height: 30px;
+	font-size:16px;
+	
+}
+
+#mySearchInfo a:LINK{
+	text-decoration:none;
+	color:black;
+}
+#mySearchInfo a:HOVER{
+	text-decoration:none;
+}
+.myright{
+	position:fixed;right:25px;bottom:25px;display:block;width:26px;height:62px;
+	background-color:orange;
+	background:url(../images/rocket.png) no-repeat 0 0;-webkit-transition: all 0.2s ease-in-out;
+}
+.myright:HOVER{
+	background:url(../images/rocket.png) no-repeat 0 -62px;
+}
+
+.errordiskfile{
+	color:red;
+}
+.errorSameName{
+	color:red;
+}
+
+.mydivcenter{
+	
+}
+/*返回按键div*/
+.backIndexDiv{
+	float: left;
+}
+/*写入文字*/
+.writeTabRight{
+	text-align: right;
+}
+.writeTabTitle{
+	text-align: center;
+	font-weight: bold;
+}
+
+.btnDivStyle{
+	height:40px;	
+}
+
+.btnUpdate{
+	background-color:pink;
+}
+/* 字体大小 */
+.normal{
+	font-size:20px;
+	background-color:#cdd8d1;
+}
+.normal a:hover{
+	color:#000000;
+}
+.max{
+	font-size:38px;
+	line-height:44px;
+	background-color:#9ce9b4;
+}
+.max a:hover{
+	color:#808080;
+}
+.min{
+	font-size:12px;
+	background-color:#f1b9dd;
+}
+.min a:link{
+	color:#ffcc22;
+}

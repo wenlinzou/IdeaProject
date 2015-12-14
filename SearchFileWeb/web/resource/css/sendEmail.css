@@ -1,0 +1,20 @@
+body{
+	text-align: center;
+}
+table{
+	width: 100%;
+}
+.sendmailDiv{
+	width: 81%;
+	margin: 0 auto;
+}
+.inputStyle{
+	width: 70%;
+}
+.tdwordRight{
+	text-align: right;
+}
+
+.errorinfo{
+	color:red;
+}

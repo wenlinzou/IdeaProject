@@ -1,0 +1,28 @@
+.header{
+	height: 5%;
+}
+.updiv{
+	width:50%;
+	background-color: #BFD9F2;
+	text-align:center;
+	font-weight: bold;
+	height: 120px;
+	
+}
+.upfile{
+	text-align:center;
+	border:0px;
+	background-color:#F97E8F;
+	color:white;
+}
+
+.subtn{
+	width:60%;
+	height:50px;
+	text-align:center;
+	background-color: #3D93D7;
+	line-height: 35px;
+	color:white;
+	font-size: 25px;
+	border: 0px;
+}

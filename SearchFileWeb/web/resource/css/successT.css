@@ -1,0 +1,22 @@
+body{
+	background-color: #F8F8F8;
+}
+
+.messageS {
+    color: green;
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.messageE {
+    color: red;
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.numStyle {
+    color: #ff77aa;
+    font-size: 23px;
+}

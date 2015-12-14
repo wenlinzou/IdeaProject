@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name></display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <!-- <welcome-file>indexLogin.jsp</welcome-file> -->
+    </welcome-file-list>
+
+    <!-- 日志文件输出到自己程序的WEB-INFO/logs -->
+    <servlet>
+        <servlet-name>lo4jInit</servlet-name>
+        <servlet-class>com.util.Log4jUtils</servlet-class>
+        <init-param>
+            <param-name>log4j_init_path</param-name>
+            <param-value>WEB-INF/classes/log4j.properties</param-value>
+        </init-param>
+        <init-param>
+            <param-name>log4j_file_path</param-name>
+            <param-value>WEB-INF/logs/</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>lo4jInit</servlet-name>
+        <url-pattern>/initlog4j.html</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404NotFound.jsp</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.servlet.SearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JumpServlet</servlet-name>
+        <servlet-class>com.servlet.JumpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrintServlet</servlet-name>
+        <servlet-class>com.servlet.PrintServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlayServlet</servlet-name>
+        <servlet-class>com.servlet.PlayServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RenameServlet</servlet-name>
+        <servlet-class>com.servlet.RenameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TurnoffPCServlet</servlet-name>
+        <servlet-class>com.servlet.TurnoffPCServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SplitFileServlet</servlet-name>
+        <servlet-class>com.servlet.SplitFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MergeFileServlet</servlet-name>
+        <servlet-class>com.servlet.MergeFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginMD5Servlet</servlet-name>
+        <servlet-class>com.servlet.LoginMD5Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IDCodeJSPServlet</servlet-name>
+        <servlet-class>com.servlet.IDCodeJSPServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Html2PdfServlet</servlet-name>
+        <servlet-class>com.servlet.Html2PdfServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IDCodeHTMLServlet</servlet-name>
+        <servlet-class>com.servlet.IDCodeHTMLServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendEmailServlet</servlet-name>
+        <servlet-class>com.servlet.SendEmailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AsciiImgServlet</servlet-name>
+        <servlet-class>com.servlet.AsciiImgServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Html2DocServlet</servlet-name>
+        <servlet-class>com.servlet.Html2DocServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GreyPhotoServlet</servlet-name>
+        <servlet-class>com.servlet.GreyPhotoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <servlet-class>com.servlet.DownloadFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadFileServlet</servlet-name>
+        <servlet-class>com.servlet.UploadFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VideoListServlet</servlet-name>
+        <servlet-class>com.servlet.VideoListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QRCodeServlet</servlet-name>
+        <servlet-class>com.servlet.QRCodeServlet</servlet-class>
+    </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JumpServlet</servlet-name>
+        <url-pattern>/jump.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrintServlet</servlet-name>
+        <url-pattern>/print.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlayServlet</servlet-name>
+        <url-pattern>/playServlet.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RenameServlet</servlet-name>
+        <url-pattern>/rename.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TurnoffPCServlet</servlet-name>
+        <url-pattern>/turnOff.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SplitFileServlet</servlet-name>
+        <url-pattern>/split.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MergeFileServlet</servlet-name>
+        <url-pattern>/mergeFile.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginMD5Servlet</servlet-name>
+        <url-pattern>/login.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IDCodeJSPServlet</servlet-name>
+        <url-pattern>/wordcheck.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Html2PdfServlet</servlet-name>
+        <url-pattern>/html2pdf.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IDCodeHTMLServlet</servlet-name>
+        <url-pattern>/htmlwordcheck.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendEmailServlet</servlet-name>
+        <url-pattern>/sendemail.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AsciiImgServlet</servlet-name>
+        <url-pattern>/asciimg.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Html2DocServlet</servlet-name>
+        <url-pattern>/html2doc.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GreyPhotoServlet</servlet-name>
+        <url-pattern>/photoGrey.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <url-pattern>/download.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadFileServlet</servlet-name>
+        <url-pattern>/uploadFile.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VideoListServlet</servlet-name>
+        <url-pattern>/videolist.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QRCodeServlet</servlet-name>
+        <url-pattern>/qrcode.html</url-pattern>
+    </servlet-mapping>
+</web-app>

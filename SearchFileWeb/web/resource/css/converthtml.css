@@ -1,0 +1,36 @@
+/*1. 网页上下颠倒 */
+body { 
+-webkit-transform: rotate(180deg); 
+}
+
+/* 2. 网页旋转 
+代码如下:  */
+body { 
+-webkit-animation: spin 5s linear infinite; 
+} 
+
+/* 3. 网页中所有图片上下颠倒 
+代码如下:  */
+img { 
+-webkit-transform: rotate(180deg); 
+} 
+
+/* 4. 网页中所有图片都自转 
+代码如下:  */
+img { 
+-webkit-animation: spin 1s linear infinite; 
+} 
+
+/* 5. 网页倒在地上了（请用内容超过多屏的网页测试） 
+代码如下:  */
+html, body { 
+height: 100%; 
+} 
+html { 
+-webkit-perspective: 1000; 
+} 
+body { 
+-webkit-transform-origin: bottom center; 
+-webkit-transform: rotateX(-90deg); 
+-webkit-animation: fall 1.5s ease-in; 
+} 

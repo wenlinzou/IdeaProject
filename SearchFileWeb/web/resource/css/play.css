@@ -1,0 +1,21 @@
+.trRight{
+	text-align: right;
+}
+#splitDiv{
+	width:550px;
+	height:150px;
+	background-color:#ffccaa;
+}
+#splitDiv table{
+	text-align:center;
+}
+
+.errorsize{
+	color:red;text-align: left;
+}
+.errorsuffix{
+	color:red;	text-align: left;
+}
+.errordir{
+	color:red;text-align: left;
+}
