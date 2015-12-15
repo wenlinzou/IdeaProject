@@ -29,6 +29,10 @@
         <error-code>404</error-code>
         <location>/404NotFound.jsp</location>
     </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/otherInfo/judgeExcel/404NotFound.html</location>
+    </error-page>
 
     <servlet>
         <servlet-name>SearchServlet</servlet-name>
@@ -115,6 +119,10 @@
         <servlet-name>QRCodeServlet</servlet-name>
         <servlet-class>com.servlet.QRCodeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.servlet.UploadServlet</servlet-class>
+    </servlet>
 
 
 
@@ -138,6 +146,10 @@
 
 
 
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload.shtml</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search.html</url-pattern>

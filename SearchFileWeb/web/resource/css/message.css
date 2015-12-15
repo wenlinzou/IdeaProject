@@ -1,0 +1,49 @@
+body {
+    background-color: #F8F8F8;
+}
+.btnReg{
+    padding:4px;
+    border-radius:2px;/*圆角*/
+    background-color: #6D94F3;
+    height:30px;
+    width:208px;
+    color:white;
+    font-weight:bold;
+    font-size: 17px;
+    border:none;
+}
+.btnBack{
+    padding:4px;
+    border-radius:2px;/*圆角*/
+    background-color: #A981C1;
+    height:30px;
+    width:70px;
+    color:white;
+    font-weight:bold;
+    font-size: 17px;
+    border:none;
+}
+.backRight{
+    height:30px;
+    width:70px;
+    float: right;
+}
+
+a:LINK {
+    text-decoration: none;
+
+}
+.centerTop{
+    width:100px;
+    text-align:center;
+    line-height:30px;
+    height:30px;
+    margin: auto;
+    display: block;
+}
+.mytrOne{
+    background-color: #D9DADC;
+}
+.mytrTwo{
+    background-color: #EBE9EC;
+}

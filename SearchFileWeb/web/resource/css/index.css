@@ -13,6 +13,7 @@ input{
 	width:200px;
 	line-height:25px;
 	background-color: #E6E6E6;
+	margin-top: 3px;
 }
 .btnSearch{
 	background-color: #98BAEF;
@@ -21,6 +22,7 @@ input{
 	color:white;
 	font-weight:bold;
 	font-size: 17px;
+	margin-top: 3px;
 }
 .errordisk{
 	color:red;
@@ -57,3 +59,33 @@ input{
 	width: 25%;
 	float: left;
 }
+li{
+	list-style: none;
+}
+
+li a{
+	text-decoration: none;
+	line-height: 29px;
+	background-color: #D5DA80;
+	width: 160px;
+	height: 29px;
+	margin-top: 4px;
+	display:block;
+	border-radius:3px;
+	color:white;
+	padding-left: 6px;
+}
+li a:hover{
+	line-height: 29px;
+	padding-left: 6px;
+	background-color: #FB8585;
+	width: 160px;
+	height: 29px;
+	margin-top: 4px;
+	display:block;
+	border-radius:3px;
+	color:white;
+	font-weight: bold;
+}
+
+

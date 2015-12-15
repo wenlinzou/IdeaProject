@@ -22,58 +22,60 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div class="left">
 
-	<div class="divTurnoff" onclick="changeDiv('turnoffpc')">关机</div>
-	<div style=";">${turnOffSuccess }
-	</div>
-	<div id="turnoffpc" style="display:none;">
-		<form action="turnOff.html" method="post" onsubmit="return trunOffPC()">
-			<input type="hidden" id="turnoffID" name="turnoffTime"/>
-			<table>
-				<tr><td>
-			<input type="radio" name="turnoff" value="0.02">立即关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="2">2分钟后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="5">5分钟后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="10">10分钟后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="20">20分钟后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="30">半小时后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="60">1小时后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="120">2小时后关机</td>
-				</tr>
-				<tr><td>
-			<input type="radio" name="turnoff" value="180">3小时后关机</td>
-				</tr>
-				
-				<tr><td>
-			<input type="radio" name="turnoff" value="720">12小时后关机</td>
-				</tr>
-				
-				
-			<TR >
-			<c:if test="${turnOffSuccess!=null }">
-				<td class="cancelOff"><input type="radio" name="turnoff" value="-1" >取消关机</td>
-			</c:if>
-			</TR>
-				<tr><td id="errormsg"></td></tr>
-				<tr><td>
-			<input type="submit" value="提交"/></td>
-				</tr>
-			</table>
-		</form>
-	</div>
+	<c:if test="${osName=='Windows'}">
+		<div class="divTurnoff" onclick="changeDiv('turnoffpc')">关机</div>
+		<div style=";">${turnOffSuccess }
+		</div>
+		<div id="turnoffpc" style="display:none;">
+			<form action="turnOff.html" method="post" onsubmit="return trunOffPC()">
+				<input type="hidden" id="turnoffID" name="turnoffTime"/>
+				<table>
+					<tr><td>
+				<input type="radio" name="turnoff" value="0.02">立即关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="2">2分钟后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="5">5分钟后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="10">10分钟后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="20">20分钟后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="30">半小时后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="60">1小时后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="120">2小时后关机</td>
+					</tr>
+					<tr><td>
+				<input type="radio" name="turnoff" value="180">3小时后关机</td>
+					</tr>
+
+					<tr><td>
+				<input type="radio" name="turnoff" value="720">12小时后关机</td>
+					</tr>
+
+
+				<TR >
+				<c:if test="${turnOffSuccess!=null }">
+					<td class="cancelOff"><input type="radio" name="turnoff" value="-1" >取消关机</td>
+				</c:if>
+				</TR>
+					<tr><td id="errormsg"></td></tr>
+					<tr><td>
+				<input type="submit" value="提交"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</c:if>
 	
 
 </div>	

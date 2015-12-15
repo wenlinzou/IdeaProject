@@ -1,0 +1,33 @@
+body {
+    background-color: #F8F8F8;
+}
+.centerDiv{
+    width:208px;
+    margin: auto;
+}
+.labelFile{
+    display:block;
+    /* background:#F5AFAF; */
+    background:#FFB974;
+    padding:4px;
+    width:200px; height:26px;
+    border-radius:2px; text-align:center;
+    color:white; font-weight:bold; overflow:hidden;
+    white-space:nowrap; text-overflow:ellipsis;
+    line-height: 26px;
+}
+.btnReg{
+    padding:4px;
+    border-radius:2px;/*圆角*/
+    background-color: #98BAEF;
+    height:34px;
+    width:208px;
+    color:white;
+    font-weight:bold;
+    font-size: 17px;
+    border:none;
+}
+.errorinfo{
+    color:red;
+    text-align:center;
+}
