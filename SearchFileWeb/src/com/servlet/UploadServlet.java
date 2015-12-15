@@ -170,7 +170,7 @@ public class UploadServlet  extends HttpServlet {
         } catch (FileUploadBase.FileSizeLimitExceededException e) {
             e.printStackTrace();
             request.setAttribute("message", "单个文件超出最大值！！！");
-            request.getRequestDispatcher("//otherInfo/judgeExcelmessage.jsp").forward(request, response);
+            request.getRequestDispatcher("//otherInfo/judgeExcel/message.jsp").forward(request, response);
             return;
         } catch (FileUploadBase.SizeLimitExceededException e) {
             e.printStackTrace();
