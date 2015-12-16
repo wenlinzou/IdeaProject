@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 
 <c:if test="${user==null }">
-		<a href="<%=basePath%>indexLogin.jsp">请跳转至登陆页</a>
+		<div class="noLogUser"><a href="<%=basePath%>indexLogin.jsp">请跳转至登陆页</a></div>
 </c:if>
 <c:if test="${user!=null }">
 

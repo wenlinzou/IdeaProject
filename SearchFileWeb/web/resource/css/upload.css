@@ -1,28 +1,67 @@
+body{
+	background-color:#BFD9F2 ;
+}
 .header{
 	height: 5%;
 }
 .updiv{
-	width:50%;
-	background-color: #BFD9F2;
-	text-align:center;
-	font-weight: bold;
-	height: 120px;
-	
-}
-.upfile{
-	text-align:center;
-	border:0px;
-	background-color:#F97E8F;
-	color:white;
+	width:208px;
+	margin: auto;
 }
 
-.subtn{
-	width:60%;
-	height:50px;
-	text-align:center;
-	background-color: #3D93D7;
-	line-height: 35px;
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+th,td {
+	padding: 0;
+}
+
+
+.labelFile{
+	display:block;
+	/* background:#F5AFAF; */
+	background:#FFB974;
+	padding:4px;
+	width:200px; height:26px;
+	border-radius:2px; text-align:center;
+	color:white; font-weight:bold; overflow:hidden;
+	white-space:nowrap; text-overflow:ellipsis;
+	line-height: 26px;
+}
+.btnReg{
+	padding:4px;
+	border-radius:2px;/*圆角*/
+	background-color: #98BAEF;
+	height:34px;
+	width:208px;
 	color:white;
-	font-size: 25px;
-	border: 0px;
+	font-weight:bold;
+	font-size: 17px;
+	border:none;
+	margin: 5px 0px;
+}
+.errorinfo{
+	text-align:center;
+	height:34px;
+	border-radius:2px;/*圆角*/
+	background-color: red;
+	width:208px;
+	color:white;
+}
+input{
+	border: none;
+}
+.codeInput{
+	height:34px;
+	width:150px;
+	border-radius:2px;/*圆角*/
+
+}
+.codeSub{
+	background-color: #8BDADA;
+	height:34px;
+	width:50px;
+	border-radius:2px;/*圆角*/
+	color:white;
 }

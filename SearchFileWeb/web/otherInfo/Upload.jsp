@@ -17,24 +17,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" type="text/css" href="<%=basePath %>resource/css/upload.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resource/js/Upload.js"></script>
+
   </head>
   
   <body>
   <div class="header"></div>
-    	<center>
+
     <div class="updiv">
-		<form action="<%=basePath%>uploadFile.html" method="post"enctype="multipart/form-data">
-			<input type="hidden" name="username" />
+		<form action="<%=basePath%>uploadFile.html" onsubmit="return checkoutUpload();" method="post"enctype="multipart/form-data">
+			<%--<input type="hidden" name="username" />
+            <br />--%>
+            <%--<input class="upfile" type="file" name="myfile" />
             <br />
-            <input class="upfile" type="file" name="myfile" />  
-            <br />
-            <input class="subtn" type="submit" value="上传" />
+            <input class="subtn" type="submit" value="上传" />--%>
+			<table>
+
+				<tr>
+
+					<td>
+						<label  for="uploadOne" class="labelFile" id="file1Text">选择文件</label>
+						<input onchange="clickFileOne();" type="file" name="myfile" id="uploadOne" style="display:none;">
+					</td>
+				</tr>
+
+				<tr>
+					<td><input type="submit" value="上传" class="btnReg"></td>
+				</tr>
+
+				<tr><td id="errorinfoTD"><span id="errorinfo" ></span></td></tr>
+			</table>
 		</form>
-		<form action="<%=basePath %>qrcode.html" method="post">
-            		<input type="text" name="qrtext"/>
-            		<input type="submit" value="二维码"/>
-            	</form>
+
+
+		<form action="<%=basePath %>qrcode.html" method="post" onsubmit="return checkCode();">
+			<input type="text" name="qrtext" id="qrtext"  class="codeInput"/>
+			<input type="submit" value="二维码" class="codeSub"/>
+		</form>
 	</div>
-		</center>
   </body>
 </html>
