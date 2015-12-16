@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bean.User;
+import org.apache.log4j.Logger;
 
 public class JumpServlet extends HttpServlet {
-
+	private static Logger logger = Logger.getLogger(JumpServlet.class);
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");

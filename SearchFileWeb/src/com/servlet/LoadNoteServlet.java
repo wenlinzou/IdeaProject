@@ -1,6 +1,7 @@
 package com.servlet;
 
 import com.service.FileService;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +14,7 @@ import java.io.IOException;
  * Created by Pet on 2015-12-16.
  */
 public class LoadNoteServlet  extends HttpServlet {
+    private static Logger logger = Logger.getLogger(LoadNoteServlet.class);
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         FileService fileService = new FileService();
         String path =  this.getServletContext().getRealPath("/WEB-INF/node");
@@ -28,6 +30,7 @@ public class LoadNoteServlet  extends HttpServlet {
                 note.createNewFile();
             }
             String noteInfo = fileService.readNode(notepath);
+            logger.info("saveNoteInfo:" + noteInfo);
             request.setAttribute("noteInfo", noteInfo);
             request.getRequestDispatcher("/otherInfo/note.jsp").forward(request, response);
 

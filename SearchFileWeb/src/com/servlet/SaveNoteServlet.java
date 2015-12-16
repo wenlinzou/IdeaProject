@@ -1,6 +1,7 @@
 package com.servlet;
 
 import com.service.FileService;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,12 +14,14 @@ import java.io.IOException;
  * Created by Pet on 2015-12-16.
  */
 public class SaveNoteServlet extends HttpServlet {
+    private static Logger logger = Logger.getLogger(SaveNoteServlet.class);
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
         FileService fileService = new FileService();
-        String nodeInfo = request.getParameter("content");
+        String noteInfo = request.getParameter("content");
         String path =  this.getServletContext().getRealPath("/WEB-INF/node");
         String noteFileName = "node.txt";
         String notepath = path + System.getProperty("file.separator") + noteFileName;
@@ -31,7 +34,8 @@ public class SaveNoteServlet extends HttpServlet {
             if(!note.exists()){
                 note.createNewFile();
             }
-            fileService.writeNode(notepath, nodeInfo);
+            fileService.writeNode(notepath, noteInfo);
+            logger.info("saveNoteInfo:" + noteInfo);
             request.setAttribute("ok", "1");
             request.setAttribute("title", "保存笔记");
             request.setAttribute("message", "保存笔记成功!");
