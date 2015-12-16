@@ -51,17 +51,15 @@
 			<tr>
 				<td class="tdwordRight">内容</td><td>
 				<!-- <input type="text" name="content"/> -->
-				<textarea rows="10px" cols="30px" name="content" class="inputStyle"></textarea>
-				<script id="editor" type="text/plain" style="width:717px;height:154px;"></script>
+				<%--<textarea rows="10px" cols="30px" name="content" class="inputStyle"></textarea>--%>
+				<%--<script id="editor" type="text/plain" style="width:717px;height:154px;"></script>--%>
+				<script id="container" name="content" type="text/plain" style="width:717px;height:154px;"></script>
 				</td>
 			</tr>
-			
-			<script type="text/javascript">
 
-		    //实例化编辑器
-		    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-		    var ue = UE.getEditor('editor');
-			</script>
+
+
+
 			
 			
 	    	<tr>
@@ -85,6 +83,11 @@
 		</table>
 		<input type="submit" value="发送"/>
 	</form>
+		<script type="text/javascript">
+			//实例化编辑器
+			//建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+			var ue = UE.getEditor('container');
+		</script>
 	
 	</div>
 	<br>

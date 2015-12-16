@@ -1,0 +1,39 @@
+.ueditorStyleDiv{
+    height:540px;
+}
+.ueditorStyle{
+    height:450px;
+}
+.titleInfo{
+    font-size: 30px;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    font-weight: bold;
+    font-family: 幼圆;
+    color: #F15763;
+}
+.saveBtn{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius:4px;
+    background-color: #8CA8ED;
+    border: none;
+    color:white;
+    font-weight: bold;
+}
+.btnBack{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius:4px;
+    background-color: #BCDCD7;
+    border: none;
+    color:white;
+    font-weight: bold;
+}
+.centerDiv{
+    width: 260px;
+    margin:auto;
+}

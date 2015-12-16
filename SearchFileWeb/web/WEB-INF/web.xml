@@ -123,6 +123,14 @@
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.servlet.UploadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoadNoteServlet</servlet-name>
+        <servlet-class>com.servlet.LoadNoteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SaveNoteServlet</servlet-name>
+        <servlet-class>com.servlet.SaveNoteServlet</servlet-class>
+    </servlet>
 
 
 
@@ -234,5 +242,13 @@
     <servlet-mapping>
         <servlet-name>QRCodeServlet</servlet-name>
         <url-pattern>/qrcode.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadNoteServlet</servlet-name>
+        <url-pattern>/loadNote.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveNoteServlet</servlet-name>
+        <url-pattern>/saveNodeInfo.html</url-pattern>
     </servlet-mapping>
 </web-app>

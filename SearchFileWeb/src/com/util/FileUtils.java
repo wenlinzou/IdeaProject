@@ -1,16 +1,6 @@
 package com.util;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.LineNumberReader;
-import java.io.OutputStreamWriter;
-import java.io.SequenceInputStream;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -60,9 +50,7 @@ public class FileUtils {
 		}
 		return hasFile;
 	}
-	public static void main(String[] args) {
-		hasFile("f:/txt","");
-	}
+
 	 /**
      * 获取全路径的路径
      *
@@ -418,10 +406,65 @@ System.out.println("ISRename:"+rename+"\toldname:"+oldname+"\tsameName:"+sameNam
 		needname = name.substring(beginIndex+1, endIndex);
 		return needname;
 	}
-	
-	
-	
-	
+
+	//获取当前时间的字符串
+	public String getCurrentTimeFilename(){
+		Date now = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");// 可以方便地修改日期格式
+
+		String currentNow = dateFormat.format(now);
+		return currentNow;
+	}
+
+	//读取文件内容txt
+	public static String getFileInfoNote(String filepath) throws IOException {
+		String fileinfo = "";
+		StringBuilder stringBuilder = new StringBuilder();
+		if(null!=filepath && !"".equals(filepath)){
+			File file = new File(filepath);
+			if(file.isFile() && file.exists()) {
+				FileInputStream fis = new FileInputStream(file);
+				InputStreamReader reader = new InputStreamReader(fis, "UTF-8");
+				BufferedReader bufferedReader = new BufferedReader(reader);
+				String lineTxt = null;
+				while(null != (lineTxt = bufferedReader.readLine())){
+					stringBuilder.append(lineTxt);
+				}
+				bufferedReader.close();
+				reader.close();
+				fis.close();
+			}else{
+				stringBuilder.append("无内容!");
+			}
+		}
+		fileinfo = stringBuilder.toString();
+		return fileinfo;
+	}
+
+	public static void writeTxtNote(String filepath, String nodeInfo) throws IOException {
+		if(null!=filepath && !"".equals(filepath)){
+			File file = new File(filepath);
+			if(file.isFile() && file.exists()) {
+				FileOutputStream fos = new FileOutputStream(file);
+				OutputStreamWriter writer = new OutputStreamWriter(fos, "UTF-8");
+				BufferedWriter bufferedWriter = new BufferedWriter(writer);
+				if(null!=nodeInfo){
+					int len = nodeInfo.length();
+					bufferedWriter.write(nodeInfo, 0, len);
+				}
+				bufferedWriter.close();
+				writer.close();
+				fos.close();
+			}
+		}
+	}
+
+
+
+	public static void main(String[] args) throws IOException {
+		writeTxtNote("F:\\txt\\3).txt","我的内容");
+
+	}
 	
 	
 	/*=============================================================

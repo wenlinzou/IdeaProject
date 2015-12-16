@@ -473,4 +473,18 @@ public class FileService {
         }
         return flag;
     }
+
+    //读取原node txt文件
+    public String readNode(String nodepath) throws IOException {
+        String nodeInfo = "";
+        if(null!=nodepath ){
+            nodeInfo = FileUtils.getFileInfoNote(nodepath);
+        }
+        return nodeInfo;
+    }
+
+    //将内容写入到node
+    public void writeNode(String nodepath, String nodeInfo) throws IOException {
+        FileUtils.writeTxtNote(nodepath, nodeInfo);
+    }
 }

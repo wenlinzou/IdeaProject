@@ -6,6 +6,7 @@ import org.apache.commons.fileupload.FileUploadBase;
 import org.apache.commons.fileupload.ProgressListener;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +25,8 @@ import java.util.List;
  * Created by Pet on 2015-12-15.
  */
 public class UploadServlet  extends HttpServlet {
+    private static Logger logger = Logger.getLogger(UploadServlet.class);
+
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {// 得到上传文件的保存目录，将上传的文件存放于WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
         String savePath = this.getServletContext().getRealPath("/WEB-INF/upload");
