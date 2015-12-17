@@ -26,7 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	
 	<div  id="convertH">
-	
 	<div class="backIndexDiv"><input type="button" value="回到首页" onclick="backIndex()" class="backIndexBtnStyle"/></div>
 	<%-- 搜索结果:<c:if test="${flag>0}">0</c:if><c:if test="${flag<0}">${totalCount }</c:if> --%>
 	
@@ -37,8 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  		<table>
 		  		<tr class="writeTabTitle"><td colspan="3">搜索结果写入</td>
 		  		</tr>
+
 				<tr class="writeTabRight">
-					<td>盘符&nbsp;</td>
+					<td><c:if test="${osname=='Windows'}">盘符</c:if><c:if test="${osname!='Windows'}">文件路径</c:if>&nbsp;</td>
 					<td><input type="text" name="diskname"/></td>
 					<td id="errordisk"></td>
 		  		</tr>

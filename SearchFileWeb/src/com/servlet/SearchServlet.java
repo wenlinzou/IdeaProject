@@ -171,7 +171,14 @@ System.out.println("file is null");
 		request.setAttribute("totalCount", totalCount);
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("flag", flag);
-		
+
+		String osname = System.getProperty("os.name");
+		int startIndex = osname.indexOf(" ");
+		if(startIndex>0){
+			osname = osname.substring(0,startIndex);
+		}
+		session.setAttribute("osname", osname);
+
 		request.getRequestDispatcher("/WEB-INF/jsp/searchSuccess1.jsp").forward(request, response);
 		
 	}

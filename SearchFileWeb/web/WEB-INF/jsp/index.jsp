@@ -88,13 +88,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</p>
 		<c:if test="${fullStr==null }">
 		
-	<center>
-	<h2 class="mycenter">搜索文件</h2>
+		<div class="searchCenterDiv">
+	<h2 class="mycenter"></h2>
 	<span id="useTime" class="numStyle"></span>
 	<input type="hidden" id="osname" value='${osName}'/>
 		<form action="search.html" method="post"  onsubmit="return validate_form(this)">
 			<table>
-			
+			<tr><td></td><td class="mycenter">搜索文件</td><td></td></tr>
 			<c:if test="${osName=='Windows'}">
 			<tr>
 				<td class="cueInfo">
@@ -140,8 +140,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</tr>
 			</table>
 		</form>
-		</center>
-		
+		</div>
+
 		</c:if>
 		
 	</div>

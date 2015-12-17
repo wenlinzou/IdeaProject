@@ -19,7 +19,7 @@ public class PrintServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		
+		String OSNAME = System.getProperty("os.name");
 		String filename = request.getParameter("filename");
 		String diskname = request.getParameter("diskname");
 		
@@ -32,15 +32,54 @@ public class PrintServlet extends HttpServlet {
 			return;
 		}
 		filename+=".txt";
-		request.setAttribute("localtion", diskname+":"+filename);
-		String localFile = diskname + ":" + filename;
+		String localFile = "";
+		if("Windows".startsWith(OSNAME)) {
+			request.setAttribute("localtion", diskname + ":" + filename);
+			localFile = diskname + ":" + filename;
+		}else{
+			request.setAttribute("localtion", diskname + System.getProperty("file.separator") + filename);
+			localFile = diskname + System.getProperty("file.separator") + filename;
+		}
 		
 		HttpSession session = request.getSession();
 		
-		List<String> list = (List<String>) session.getAttribute("fileLists");
-		
-		boolean flag = fs.write2File(list, new File(diskname+":",filename));
-		
+		List<String> list = (List<String>) session.getAttribute("sessionFileLists");
+
+		boolean flag = false;
+		if(null!=list) {
+
+			if(OSNAME.startsWith("Windows")) {
+				String tempFilepath = "";
+				int lastIndex = diskname.lastIndexOf(":");
+				int startIndex = diskname.indexOf(":");
+				if(startIndex!=lastIndex){
+					char[] disknames = diskname.toCharArray();
+					StringBuilder sb = new StringBuilder();
+
+					for(int i=0;i<disknames.length;i++){
+						if(i!=lastIndex){
+							sb.append(disknames[i]);
+						}
+					}
+
+				}
+				tempFilepath = diskname + System.getProperty("file.separator") + filename;
+
+				File writeFile = new File(tempFilepath);
+				if(!writeFile.exists()){
+					writeFile.mkdir();
+					writeFile.createNewFile();
+				}
+				flag = fs.write2File(list, writeFile);
+			}else{
+				File writeFile = new File(diskname + System.getProperty("file.separator")+filename);
+				if(!writeFile.exists()){
+					writeFile.mkdir();
+					writeFile.createNewFile();
+				}
+				flag = fs.write2File(list, writeFile);
+			}
+		}
 		if(flag){
 			request.setAttribute("ok", "1");
 			request.setAttribute("title", "写入磁盘成功");
