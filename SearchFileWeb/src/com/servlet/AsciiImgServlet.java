@@ -49,6 +49,7 @@ public class AsciiImgServlet extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/jsp/successT.jsp").forward(request, response);
         }
 
+
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
