@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr>
 					<td colspan="2" >
 					<input type="text" class="wordCheck" name="wordcheck" id="wordcheck"/>
-					<img alt="change" src="<%=basePath %>wordcheck.html"onclick="changeImage(this)" style="cursor: hand;display: block;float: right;height:40px;">
+					<img class="imgStyle" alt="change" src="<%=basePath %>wordcheck.html"onclick="changeImage(this)" style="cursor: hand;display: block;float: right;height:40px;">
 					</td>
 				</tr>
 				

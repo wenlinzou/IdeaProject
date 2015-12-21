@@ -31,6 +31,7 @@ $(function() {
 
 });
 
+
 // enter事件
 /*document.onkeydown = function(event) {
 	var e = event || window.event || arguments.callee.caller.arguments[0];
@@ -110,6 +111,26 @@ function callback(data) {
 	// 4将服务器端返回的数据动态的显示在页面上
 	// 找到保存结果信息的节点
 	var msgObj = $("#msg");
+
+	if("用户名不能为空"==text){
+		//清空输入验证码框
+		$("input[name='username']").val("");
+		//获取焦点
+		$("input[name='username']").focus();
+	}
+	if("密码不能为空"==text) {
+		//清空输入验证码框
+		$("input[name='password']").val("");
+		//获取焦点
+		$("input[name='password']").focus();
+	}
+	if("验证码不能为空"==text){
+		//清空输入验证码框
+		$("input[name='wordcheck']").val("");
+		//获取焦点
+		$("input[name='wordcheck']").focus();
+	}
+
 
 	if (!goToOther(text)) {
 		// 动态的改变页面中div节点中的内容
