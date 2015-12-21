@@ -47,9 +47,8 @@ public class AsciiImgServlet extends HttpServlet {
             else
                 request.setAttribute("message", "图像字符画失败!");
             request.getRequestDispatcher("/WEB-INF/jsp/successT.jsp").forward(request, response);
+
         }
-
-
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
