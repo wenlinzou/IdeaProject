@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.service.PCService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadException;
@@ -36,6 +37,12 @@ public class UploadFileServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+
+		PCService ps = new PCService();
+		String userLogIP = request.getRemoteAddr();
+		logger.info("UploadFileServlet Media Addr: "+ps.getIpAddr(userLogIP));
+		logger.info("userLogIP: " + userLogIP);
+
 		UploadFileService upFileService = new UploadFileService();
 		
 		HashMap<String,String> param_hm = new HashMap<String,String>();

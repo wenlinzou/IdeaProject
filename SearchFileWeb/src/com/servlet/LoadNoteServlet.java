@@ -1,6 +1,7 @@
 package com.servlet;
 
 import com.service.FileService;
+import com.service.PCService;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -16,6 +17,11 @@ import java.io.IOException;
 public class LoadNoteServlet  extends HttpServlet {
     private static Logger logger = Logger.getLogger(LoadNoteServlet.class);
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PCService ps = new PCService();
+        String userLogIP = request.getRemoteAddr();
+        logger.info("LoadNoteServlet Addr: "+ps.getIpAddr(userLogIP));
+        logger.info("userLogIP: " + userLogIP);
+
         FileService fileService = new FileService();
         String path =  this.getServletContext().getRealPath("/WEB-INF/node");
         String noteFileName = "node.txt";
